@@ -1,0 +1,138 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+}
+body{
+    background-color: #393939;
+    background-image: url("imagesGhibli/totoroBack.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
+    background-size: 40%;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 1920px;
+    height: 20%;
+    background-color: #109CEB;
+}
+.logo{
+    width: 439px;
+    height: 189px;
+}
+.logotipo{
+    width: 560px;
+    height: 140px;
+    margin-left: 240px;
+    margin-top: 20px;
+}
+footer{
+    background-image: url("imagesGhibli/cardBack.png");
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    bottom: 0%;
+}
+.foot{
+    font-family: "Poppins", sans-serif;
+    text-align: right;
+    margin-right: 1%;
+    color: #fff;
+    font-weight: bolder;
+}
+.landingText{
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    padding: 3%;
+}
+.title{
+    font-size: 36pt;
+    font-weight: bold;
+}
+.welcome{
+    width: 55%;
+    font-size: 18pt;
+}
+.cards{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.cardTitle{
+    font-size: 16pt;
+    font-weight: bold;
+}
+.cardText{
+    font-size: 12pt;
+}
+.cardFilms{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    justify-content: space-evenly;
+    padding-top: 2%;
+    padding-bottom: 0.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 173px;
+    border: 2px;
+    border-style: solid;
+    border-color: #109CEB;
+    border-radius: 30px;
+    background-image: url("imagesGhibli/cardBack.png");
+    font-family: "Poppins",sans-serif;
+    color: #fff;
+}
+.cardMusic{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    justify-content: space-evenly;
+    padding-top: 2%;
+    padding-bottom: 0.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 173px;
+    border: 2px;
+    border-style: solid;
+    border-color: #109CEB;
+    border-radius: 30px;
+    background-image: url("imagesGhibli/cardBack.png");
+    font-family: "Poppins",sans-serif;
+    color: #fff;
+}
+.cardVoices{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    justify-content: space-evenly;
+    padding-top: 2%;
+    padding-bottom: 0.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 173px;
+    border: 2px;
+    border-style: solid;
+    border-color: #109CEB;
+    border-radius: 30px;
+    background-image: url("imagesGhibli/cardBack.png");
+    font-family: "Poppins",sans-serif;
+    color: #fff;
+}
+.btn{
+    border-radius: 50px;
+    border-color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+    width: 50%;
+    color: black;
+    margin-left: 25%;
+    background-color: #fff;
+}
+.btnFilms{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0%;
+}
