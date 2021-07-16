@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -12,27 +12,24 @@ body {
   background-attachment: fixed;
   background-size: 40%;
 }
-.main{
-  width: 1920px;
-}
+
 .header {
   display: flex;
   flex-direction: row;
-  width: 1920px;
-  height: 20%;
+  width: 100%;
+  min-width: 150px;
+  height: 15%;
   background-color: #109CEB;
 }
 
 .logo {
-  width: 439px;
-  height: 189px;
+  width: 45%;
+  height: 100px;
 }
 
 .logotipo {
-  width: 560px;
-  height: 140px;
-  margin-left: 240px;
-  margin-top: 20px;
+  width: 55%;
+  height: 60px;
 }
 
 footer {
@@ -56,45 +53,38 @@ footer {
   color: #fff;
   padding: 3%;
 }
-
 .title {
-  font-size: 36pt;
   font-weight: bold;
 }
-
 .welcome {
-  width: 55%;
-  font-size: 18pt;
+  width: 80%;
+  font-size: 12pt;
 }
-
 .cards {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .cardTitle {
-  display:block;
-  font-size: 16pt;
-  font-weight: bold;
-}
-
-.cardText {
-  font-size: 14pt;
+  display: none;
 }
 
 .cardFilms,
 .cardMusic,
 .cardVoices {
+  margin: 5%;
   display: flex;
   flex-direction: column;
-  flex-basis: 20%;
-  justify-content: space-around;
-  padding-top: 1%;
-  padding-bottom: 0.5%;
+  /*flex-basis: 25%;*/
+  justify-content: space-evenly;
+  padding-top: 2%;
+  padding-bottom: 0.1%;
   padding-left: 2%;
   padding-right: 2%;
-  height: 173px;
+  width: 70%;
+  min-width: 150px;
+  height: 120px;
   border: 2px;
   border-style: solid;
   border-color: #109CEB;
@@ -102,6 +92,8 @@ footer {
   background-image: url("imagesGhibli/cardBack.png");
   font-family: "Poppins", sans-serif;
   color: #fff;
+  font-size: 12pt;
+  text-align: center;
 }
 
 .btn {
@@ -109,7 +101,7 @@ footer {
   border-color: #fff;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
-  font-size: 16pt;
+  font-size: 14pt;
   width: 50%;
   color: black;
   margin-left: 25%;
@@ -117,47 +109,10 @@ footer {
 }
 
 .btnFilms {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   margin-bottom: 0%;
 }
-
-.wallTitle {
-  display: block;
-  margin-left: 62px;
-  margin-top: 60px;
-  font-size: 36pt;
-  font-weight: bold;
-  font-family: "Poppins", sans-serif;
-  color: #fff;
-}
-
-
-.wallimages {
-  display: block;
-  display: flex;
-  flex-direction: row;
-  /*flex-basis: 25%;*/
-}
-
-.gedo,
-.chihiro,
-.totoro,
-.ponyo {
-  display: block;
-  width: 380px;
-  height: 190px;
-  justify-content: space-evenly;
-  margin: 25px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  border-radius: 5px;
-}
-
-.gedo {
-  display: block;
-  margin-left: 110px;
-}
 .prettyimages{
-  display: block;
+  display: none;
 }
