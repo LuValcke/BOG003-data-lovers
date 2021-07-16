@@ -6,11 +6,11 @@
 
 body {
   background-color: #393939;
-  background-image: url("imagesGhibli/totoroBack.png");
+  background-image: url("imagesGhibli/totoroHalf.png");
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: right bottom;
   background-attachment: fixed;
-  background-size: 40%;
+  background-size: 80%;
 }
 
 .header {
@@ -23,13 +23,15 @@ body {
 }
 
 .logo {
-  width: 45%;
-  height: 100px;
+  width: 40%;
+  height: 80px;
 }
 
 .logotipo {
-  width: 55%;
+  width: 50%;
   height: 60px;
+  margin-top: 20px;
+  margin-left: 3%;
 }
 
 footer {
@@ -39,19 +41,19 @@ footer {
   height: 30px;
   bottom: 0%;
 }
-
 .foot {
   font-family: "Poppins", sans-serif;
   text-align: right;
-  margin-right: 1%;
+  margin-right: 3%;
   color: #fff;
   font-weight: bolder;
 }
-
 .landingText {
   font-family: "Poppins", sans-serif;
   color: #fff;
-  padding: 3%;
+  padding-top: 3%;
+  text-align: center;
+  margin: 0%;
 }
 .title {
   font-weight: bold;
@@ -59,6 +61,7 @@ footer {
 .welcome {
   width: 80%;
   font-size: 12pt;
+  margin-left: 10%;
 }
 .cards {
   display: flex;
@@ -107,11 +110,21 @@ footer {
   margin-left: 25%;
   background-color: #fff;
 }
-
+.btn:hover{
+  color: #109CEB;
+}
 .btnFilms {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin-bottom: 0%;
+}
+.btnMusic {
+  width: 25px;
+  height: 30px;
+}
+.btnVoices {
+  width: 20px;
+  height: 30px;
 }
 .prettyimages{
   display: none;
