@@ -23,8 +23,8 @@
   }
   
   .cardFilms,
-  .cardMusic,
-  .cardVoices {
+  .cardDirectors,
+  .cardCharacters {
     width: 50%;
   }
   

@@ -18,39 +18,39 @@
     <img class="logotipo" src="imagesGhibli/logotipo.png">
   </header>
   <main class="main">
-    <section class="landingText">
+    <section class="landingText" id="homeTxt">
       <p class="title">Studio Ghibli</p>
       <p class="welcome">What’s your Studio Ghibli favorite movie? Wich’s the character that touched your heart?
         Everything you would like to know about Studio Ghibli is here.</br>
         Welcome to Ghibli Love!</p>
     </section>
-    <section class="cards">
+    <section class="cards" id="home">
       <div class="cardFilms">
         <p class="cardTitle">Films</p>
         <p class="cardText">Here you can find all the info about Studio Ghibli's movies.</p>
-        <button class="btn">
+        <button class="btn" id="buttonFilms">
           <img class="btnFilms" src="imagesGhibli/fairyDust.png">
           FILMS
         </button>
       </div>
-      <div class="cardMusic">
-        <p class="cardTitle">Music</p>
-        <p class="cardText">All about the compossers that made the music we love.</p>
+      <div class="cardDirectors">
+        <p class="cardTitle">Directors</p>
+        <p class="cardText">All about the directors that made the films we love.</p>
         <button class="btn">
-          <img class="btnMusic" src="imagesGhibli/umbrella.png">
-          MUSIC
+          <img class="btnDirectors" src="imagesGhibli/umbrella.png">
+          DIRECTORS
         </button>
       </div>
-      <div class="cardVoices">
-        <p class="cardTitle">Voices</p>
-        <p class="cardText">Information about the voices of Studio Ghibli's characters.</p>
+      <div class="cardCharacters">
+        <p class="cardTitle">Characters</p>
+        <p class="cardText">Information about the characters we all love.</p>
         <button class="btn">
-          <img class="btnVoices" src="imagesGhibli/cat.png">
-          VOICES
+          <img class="btnCharacters" src="imagesGhibli/cat.png">
+          CHARACTERS
         </button>
       </div>
     </section>
-    <section  class="prettyimages">
+    <section  class="prettyimages" id="wallImg">
       <p class="wallTitle">Wallpapers</p>
       <div class="wallimages">
         <img class="gedo" src="./imagesGhibli/gedo1.jpg">
@@ -58,6 +58,23 @@
         <img class="totoro" src="./imagesGhibli/totoro.jpg">
         <img class="ponyo" src="./imagesGhibli/ponyo1.jpg">
       </div>
+    </section>
+    <section class="directors" id="movieDir" style="display: none;">
+      <p class="title">DIRECTORS</p>
+      <ul class="directorsList">
+      <li id="hayao">Hayao Miyazaki</li>
+      <span id="hayaoFilms"></span>
+      <li id="isao">Isao Takahata</li>
+      <span id="isaoFilms"></span>
+      <li id="yoshi">Yoshifumi Kondō</li>
+      <span id="yoshiFilms"></span>
+      <li id="yuki">Hiroyuki Morita</li>
+      <span id="yukiFilms"></span>
+      <li id="goro">Gorō Miyazaki</li>
+      <span id="goroFilms"></span>
+      <li id="masa">Hiromasa Yonebayashi</li>
+      <span id="masaFilms"></span>
+    </ul>
     </section>
   </main>
   <footer>
