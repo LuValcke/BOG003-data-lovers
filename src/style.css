@@ -60,8 +60,8 @@ body {
 }
 
 .cardFilms,
-.cardMusic,
-.cardVoices {
+.cardDirectors,
+.cardCharacters {
   flex-basis: 20%;
   justify-content: space-around;
   padding-top: 1%;
@@ -70,7 +70,7 @@ body {
 }
 
 .btn {
-  font-size: 16pt;
+  font-size: 13pt;
 }
 
 .btn:hover{
@@ -80,6 +80,8 @@ body {
 .btnFilms {
   width: 30px;
   height: 30px;
+  justify-content: center;
+  margin-left: 1%;
 }
 
 .wallTitle {
@@ -112,6 +114,10 @@ body {
   margin-top: 50px;
   margin-bottom: 100px;
   border-radius: 5px;
+}
+
+.foot {
+  margin-right: 1%;
 }
 
 .gedo {
