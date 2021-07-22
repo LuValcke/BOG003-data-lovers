@@ -1,10 +1,7 @@
 import data from './data/ghibli/ghibli.js';
-import {miyazaki} from './data.js';
-import {takahaka} from './data.js';
-import {kondo} from './data.js';
-import {morita} from './data.js';
-import {goro} from './data.js';
-import {yonebayashi} from './data.js';
+ 
+import {moviesList} from './data.js';
+
 
 //Este es el evento que sucede cuando se aprieta el botón Directors
 document.getElementById('buttonDirectors').addEventListener('click',() => {
@@ -16,86 +13,42 @@ document.getElementById('buttonDirectors').addEventListener('click',() => {
 
 //Estas funciones suceden cuando se clickea el nombre de algún director en la página de directores, al darle click se muestran las películas de ese director, al volver a clickear se ocultan
 document.getElementById('hayao').addEventListener('click',() => {
-    //document.getElementsByClassName('directorSpan').style.display='none';---------NO FUNCIONÓ
-    //document.getElementById('hayaoFilms').innerHTML= miyazaki;
-    // document.getElementById('hayao').addEventListener('click',() =>{
-    //         document.getElementById('hayaoFilms').style.display='none';
-    //     })
-    if (addList === false){
-        addLi ();
-        addList = true;
-    } else {
-        document.getElementById('hayaoFilms').setAttribute('hidden','');
-        addList = false;
-    }
+    addLi('Hayao Miyazaki', '#hayaoFilms');
+    document.getElementById('hayaoFilms').classList.toggle('newSpanStyle');
 })
+
 document.getElementById('isao').addEventListener('click',() => {
-    //document.getElementsByClassName('directorSpan').style.display='none';
-    document.getElementById('isaoFilms').innerHTML= takahaka;
-    document.getElementById('isao').addEventListener('click',() =>{
-        document.getElementById('isaoFilms').style.display='none';
-    })
+    addLi('Isao Takahata', '#isaoFilms');
+    document.getElementById('isaoFilms').classList.toggle('newSpanStyle');
 })
 document.getElementById('yoshi').addEventListener('click',() => {
-    //document.getElementsByClassName('directorSpan').style.display='none';
-    document.getElementById('yoshiFilms').innerHTML= kondo;
-    document.getElementById('yoshi').addEventListener('click',() =>{
-        document.getElementById('yoshiFilms').style.display='none';
-    })
+    addLi('Yoshifumi Kondō', '#yoshiFilms');
+    document.getElementById('yoshiFilms').classList.toggle('newSpanStyle');
 })
 document.getElementById('yuki').addEventListener('click',() => {
-    //document.getElementsByClassName('directorSpan').style.display='none';
-    document.getElementById('yukiFilms').innerHTML= morita;
-    document.getElementById('yuki').addEventListener('click',() =>{
-        document.getElementById('yukiFilms').style.display='none';
-    })
+    addLi('Hiroyuki Morita', '#yukiFilms');
+    document.getElementById('yukiFilms').classList.toggle('newSpanStyle');
 })
 document.getElementById('goro').addEventListener('click',() => {
-    //document.getElementsByClassName('directorSpan').style.display='none';
-    document.getElementById('goroFilms').innerHTML= goro;
-    document.getElementById('goro').addEventListener('click',() =>{
-        document.getElementById('goroFilms').style.display='none';
-    })
+    addLi ('Gorō Miyazaki', '#goroFilms');
+    document.getElementById('goroFilms').classList.toggle('newSpanStyle');
 })
 document.getElementById('masa').addEventListener('click',() => {
-    //document.getElementsByClassName('directorSpan').style.display='none';
-    document.getElementById('masaFilms').innerHTML= yonebayashi;
-    document.getElementById('masa').addEventListener('click',() =>{
-        document.getElementById('masaFilms').style.display='none';
-    })
+    addLi ('Hiromasa Yonebayashi', '#masaFilms');
+    document.getElementById('masaFilms').classList.toggle('newSpanStyle');
 })
     
 
 
 
-/* let movie = movieFilter(dataMovie, "Hayao Miyazaki").map(film => film.title);
-console.log(movie) */
-//let movieTitles=[];
-//for(let i=0; i < movie.length; i++){
-    //movieTitles[i]=movie[i].title
-//}
-//console.table(movieTitles)
-
-// const dataMovie = data.films
-
-// let movies = []
-
-// directorF = "Hayao Miyazaki";
-
-// dataMovie.forEach(filmsByDir);
-
-// function filmsByDir (directorF){
-//     dataMovie.filter(movies=>movies.director === directorF);
-// }
-
-let addList = false;
-function addLi() {
+function addLi(director, site) {
+    document.querySelector(site).innerHTML = "";
     var titles;
-    for (let i = 0; i < miyazaki.length; i++) {
+    for (let i = 0; i < moviesList(data.films, director).length; i++) {
       var li = document.createElement("li");
-      titles = miyazaki[i];
+      titles = moviesList(data.films, director)[i];
       li.appendChild(document.createTextNode(titles));
-      document.querySelector("#hayaoFilms").appendChild(li); 
+      document.querySelector(site).appendChild(li);
     }
 }
 
