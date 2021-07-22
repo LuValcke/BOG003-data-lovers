@@ -6,6 +6,7 @@ import {morita} from './data.js';
 import {goro} from './data.js';
 import {yonebayashi} from './data.js';
 
+
 //Este es el evento que sucede cuando se aprieta el botón Directors
 document.getElementById('buttonDirectors').addEventListener('click',() => {
     document.getElementById('homeTxt').style.display='none';
@@ -16,7 +17,6 @@ document.getElementById('buttonDirectors').addEventListener('click',() => {
 
 //Estas funciones suceden cuando se clickea el nombre de algún director en la página de directores, al darle click se muestran las películas de ese director, al volver a clickear se ocultan
 document.getElementById('hayao').addEventListener('click',() => {
-    //document.getElementsByClassName('directorSpan').style.display='none';---------NO FUNCIONÓ
     document.getElementById('hayaoFilms').innerHTML= miyazaki;
     document.getElementById('hayao').addEventListener('click',() =>{
         document.getElementById('hayaoFilms').style.display='none';
@@ -54,7 +54,7 @@ document.getElementById('masa').addEventListener('click',() => {
     //document.getElementsByClassName('directorSpan').style.display='none';
     document.getElementById('masaFilms').innerHTML= yonebayashi;
     document.getElementById('masa').addEventListener('click',() =>{
-        document.getElementById('masaFilms').style.display='none';
+        document.getElementById('masaFilms').style.display='none' ;
     })
 })
     
