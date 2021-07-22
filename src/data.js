@@ -8,3 +8,6 @@ export let kondo = dataMovie.filter(movies=>movies.director==="Yoshifumi Kondō"
 export let morita = dataMovie.filter(movies=>movies.director==="Hiroyuki Morita").map(film=>[film.title]);
 export let goro = dataMovie.filter(movies=>movies.director==="Gorō Miyazaki").map(film=>[film.title]);
 export let yonebayashi = dataMovie.filter(movies=>movies.director==="Hiromasa Yonebayashi").map(film=>[film.title]);
+export let listaDePeliculas = function (director){
+    return dataMovie.filter(movies=>movies.director===director).map(film=>film.title);
+}
