@@ -3,6 +3,7 @@ import data from './data/ghibli/ghibli.js';
 import {moviesList} from './data.js';
 
 
+
 //Este es el evento que sucede cuando se aprieta el botón Directors
 document.getElementById('buttonDirectors').addEventListener('click',() => {
     document.getElementById('homeTxt').style.display='none';
