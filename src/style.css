@@ -127,3 +127,15 @@ body {
 .prettyimages{
   display: block;
 }
+#directList{
+  font-size: 42pt;
+  margin-bottom: 2%;
+}
+.directorsList{
+  font-size: 24pt;
+  font-weight: normal;
+}
+.home{
+  width: 10%;
+  margin-top: 3%;
+}

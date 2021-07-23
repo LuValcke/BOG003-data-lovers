@@ -38,6 +38,9 @@ document.getElementById('masa').addEventListener('click',() => {
     addLi ('Hiromasa Yonebayashi', '#masaFilms');
     document.getElementById('masaFilms').classList.toggle('newSpanStyle');
 })
+document.getElementById('homeDir').addEventListener('click',() => {
+    location.reload();
+})
     
 
 
