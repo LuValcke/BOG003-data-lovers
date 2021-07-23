@@ -1,18 +1,34 @@
-import { example, anotherExample } from '../src/data.js';
+import { moviesList } from '../src/data.js';
+const entry = {"films": [{"id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+    "title": "Castle in the Sky", "director": "Hayao Miyazaki",
+    "producer": "Isao Takahata"},
+    {"id": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
+    "title": "My Neighbor Totoro","director": "Hayao Miyazaki",
+    "producer": "Hayao Miyazaki"},
+    {"id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
+    "title": "Grave of the Fireflies","director": "Isao Takahata",
+    "producer": "Toru Hara"},
+    {"id": "ff24da26-a969-4f0e-ba1e-a122ead6c6e3",
+    "title": "Whisper of the Heart","director": "Yoshifumi Kondō",
+    "producer": "Toshio Suzuki"},
+    {"id": "90b72513-afd4-4570-84de-a56c312fdf81",
+    "title": "The Cat Returns","director": "Hiroyuki Morita",
+    "producer": "Toshio Suzuki"}]}
 
-
-describe('example', () => {
+const output = ["Castle in the Sky", "My Neighbor Totoro"]
+describe('moviesList', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof moviesList).toBe('function');
   });
+  
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns output', () => {
+    expect(moviesList(entry, "Hayao Miyazaki")).toBe(output);
   });
 });
 
 
-describe('anotherExample', () => {
+/* describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
   });
@@ -20,4 +36,5 @@ describe('anotherExample', () => {
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
   });
-});
+}); */
+ 
