@@ -1,5 +1,5 @@
 import { moviesList } from '../src/data.js';
-const entry = {"films": [{"id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+const entry = [{"id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
     "title": "Castle in the Sky", "director": "Hayao Miyazaki",
     "producer": "Isao Takahata"},
     {"id": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
@@ -13,17 +13,24 @@ const entry = {"films": [{"id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
     "producer": "Toshio Suzuki"},
     {"id": "90b72513-afd4-4570-84de-a56c312fdf81",
     "title": "The Cat Returns","director": "Hiroyuki Morita",
-    "producer": "Toshio Suzuki"}]}
+    "producer": "Toshio Suzuki"}];
 
-const output = ["Castle in the Sky", "My Neighbor Totoro"]
+
 describe('moviesList', () => {
   it('is a function', () => {
     expect(typeof moviesList).toBe('function');
   });
-  
-
+  const output = ["Castle in the Sky", "My Neighbor Totoro"]
   it('returns output', () => {
-    expect(moviesList(entry, "Hayao Miyazaki")).toBe(output);
+    expect(moviesList(entry, "Hayao Miyazaki")).toStrictEqual(output);
+  });
+  const output1 = ["Grave of the Fireflies"]
+  it('returns output1', () => {
+    expect(moviesList(entry, "Isao Takahata")).toStrictEqual(output1);
+  });
+  const output2 = ["The Cat Returns"]
+  it('returns output2', () => {
+    expect(moviesList(entry, "Hiroyuki Morita")).toStrictEqual(output2);
   });
 });
 
