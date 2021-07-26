@@ -1,6 +1,6 @@
 import data from './data/ghibli/ghibli.js';
  
-import {moviesList} from './data.js';
+import {dataSortedAZ, dataSortedZA, moviesList} from './data.js';
 import {dataSortedNew} from './data.js';
 import {dataSortedOld} from './data.js';
 
@@ -57,11 +57,14 @@ document.getElementById('masa').addEventListener('click',() => {
 document.querySelector('#filmSelect').addEventListener("change", function() {
     document.getElementById('filmsDate').innerHTML = "";
     if (this.value == "old") {
-        showDate(dataSortedNew(data.films));
-    }else{
         showDate(dataSortedOld(data.films));
+    }else if(this.value == "new") {
+        showDate(dataSortedNew(data.films));
+    } else if(this.value == "az") {
+        showDate(dataSortedAZ(data.films));
+    } else { showDate(dataSortedZA(data.films));
     }
-  });
+});
 
 
 
