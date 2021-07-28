@@ -20,19 +20,17 @@ document.getElementById("buttonFilms").addEventListener("click", () => {
   document.getElementById("movieDir").style.display = "none";
   document.getElementById("filmSort").style.display = "block";
   showDate(data.films);
- 
 });
 //Este es el evento que sucede cuando se aprieta el botón Characters
 document.getElementById("buttonCharacters").addEventListener("click", () => {
-    document.getElementById("homeTxt").style.display = "none";
-    document.getElementById("home").style.display = "none";
-    document.getElementById("wallImg").style.display = "none";
-    document.getElementById("movieDir").style.display = "none";
-    document.getElementById("filmSort").style.display = "none";
-    document.getElementById("characters").style.display = "block";
-    recorrerArray(data.films);
-   
-  });
+  document.getElementById("homeTxt").style.display = "none";
+  document.getElementById("home").style.display = "none";
+  document.getElementById("wallImg").style.display = "none";
+  document.getElementById("movieDir").style.display = "none";
+  document.getElementById("filmSort").style.display = "none";
+  document.getElementById("characters").style.display = "block";
+  recorrerArray(data.films);
+});
 //Estos son los eventos para volver al home
 document.getElementById("homeDir").addEventListener("click", () => {
   location.reload();
@@ -41,8 +39,8 @@ document.getElementById("homeFilms").addEventListener("click", () => {
   location.reload();
 });
 document.getElementById("homeCharacters").addEventListener("click", () => {
-    location.reload();
-  });
+  location.reload();
+});
 //Estas funciones suceden cuando se clickea el nombre de algún director en la página de directores, al darle click se muestran las películas de ese director, al volver a clickear se ocultan
 document.getElementById("hayao").addEventListener("click", () => {
   addLi("Hayao Miyazaki", "#hayaoFilms");
@@ -110,70 +108,70 @@ function showDate(data) {
     document.getElementById("filmsDate").appendChild(filmName);
   });
 }
-  
-  function showCharacters(data) {
-    var  personajes = []
-    data.forEach((e) =>{
-        const characterMovie = document.createElement("div");
-        const characterImg = document.createElement("img");
-        const characterName = document.createElement("h3");
-        const characterGend = document.createElement("h4");
-        characterImg.src = e.img;
-        characterName.textContent = e.name;
-        characterGend.textContent = e.gender;
-        characterMovie.setAttribute("class", "characterPlace");
-        characterMovie.appendChild(characterImg);
-        characterMovie.appendChild(characterName);
-        characterMovie.appendChild(characterGend);
-        document.getElementById("filmsCharacters").appendChild(characterMovie);
-        personajes = personajes + [e.gender] + ", "
-        })
-        showGenders(personajes)
-        //console.log(showGenders(personajes)) 
-} 
 
+let generospersonajes = [];
+//Función para crear los contenedores de los personajes, su imagen, nombre y género
+function showCharacters(data) {
+  data.forEach((e) => {
+    const characterMovie = document.createElement("div");
+    const characterImg = document.createElement("img");
+    const characterName = document.createElement("h3");
+    const characterGend = document.createElement("h4");
+    characterImg.src = e.img;
+    characterName.textContent = e.name;
+    characterGend.textContent = e.gender;
+    characterMovie.setAttribute("class", "characterPlace");
+    characterMovie.appendChild(characterImg);
+    characterMovie.appendChild(characterName);
+    characterMovie.appendChild(characterGend);
+    document.getElementById("filmsCharacters").appendChild(characterMovie);
+    //personajes = personajes + [e.gender] + ", "
+    generospersonajes.push(e.gender);
+  });
 
-function recorrerArray(dataFilms) {
-    let contador = 0;
-    for (let i = 0; i < dataFilms.length; i++) {
-        showCharacters(dataFilms[i].people)
-        contador = contador + dataFilms[i].people.length 
-    } //console.log(contador)
+  //showGenders(personajes)
+  //console.log(generospersonajes)
 }
 
-export function showGenders(personajes){
-    let fem = [];
-    let male = [];
-    let other = [];
-    for (let i = 0; i < personajes.length; i++) {
-        if(i === "female"){
-            fem = fem +1;}
-        else if(i === "male"){
-            male = male + 1;}
-        else{
-            other = other +1;}
-        }
-        console.log(fem)
-        } 
+showGenders(generospersonajes);
 
-       
+function recorrerArray(dataFilms) {
+  let contador = 0;
+  for (let i = 0; i < dataFilms.length; i++) {
+    showCharacters(dataFilms[i].people);
+    contador = contador + dataFilms[i].people.length;
+  } //console.log(contador)
+}
+
+/* let fem;
+let male;
+let other; */
+export function showGenders(generos) {
+let fem= 0;
+let male = 0;
+let other = 0;
+  //console.log(generos); 
+generos.forEach(element => {
+    if (element === "Female") {
+        fem = fem + 1;
+      } else if (element === "Male") {
+        male = male + 1;
+      } else {
+        other = other + 1;
+      }
+      
+});
+console.log(fem)
+}
 
 
-/*  function showCharacters(data) {
-    for(let i in data) {
-        const characterMovie = document.createElement("div");
-        const characterImg = document.createElement("img");
-        const characterName = document.createElement("h3");
-        const characterGend = document.createElement("h4");
-        characterImg.src = data[i]["img"];
-        characterName.textContent = data[i]["name"];
-        characterGend.textContent = data[i]["gender"];
-        characterMovie.setAttribute("class", "characterPlace");
-        characterMovie.appendChild(characterImg);
-        characterMovie.appendChild(characterName);
-        characterMovie.appendChild(characterGend);
-        document.getElementById("filmsCharacters").appendChild(characterMovie);
-        console.log(data[i]["name"]);
+  /* for (let i = 0; i < generos.length; i++) {
+    if (generos[i] == "Female") {
+      fem = fem + 1;
+    } else if (generos[i] == "Male") {
+      male = male + 1;
+    } else {
+      other = other + 1;
     }
-} */ 
-//console.log(data.films[0]["people"][0]["name"]);
+  } */
+ 
