@@ -1,111 +1,134 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghibli Love</title>
+    <link rel="stylesheet" href="mobile.css" />
+    <link rel="stylesheet" media="(min-width:768px)" href="tablet.css" />
+    <link rel="stylesheet" media="(min-width:1024px)" href="style.css" />
+    <link rel="icon" href="imagesGhibli/Favicon.ico" type="image/png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ghibli Love</title>
-  <link rel="stylesheet" href="mobile.css"/>
-  <link rel="stylesheet" media="(min-width:768px)" href="tablet.css"/>
-  <link rel="stylesheet" media="(min-width:1024px)" href="style.css" />
-  <link rel="icon" href="imagesGhibli/Favicon.ico" type="image/png">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
-  <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
-</head>
+  <body>
+    <header class="header">
+      <img class="logo" src="imagesGhibli/logo.png" alt="logo" />
+      <img class="logotipo" src="imagesGhibli/logotipo.png" />
+    </header>
+    <main class="main">
+      <section class="landingText" id="homeTxt">
+        <p class="title">Studio Ghibli</p>
+        <p class="welcome">
+          What’s your Studio Ghibli favorite movie? What’s the character that
+          touched your heart? Everything you would like to know about Studio
+          Ghibli is here.<br />
+          Welcome to Ghibli Love!
+        </p>
+      </section>
+      <section class="cards" id="home">
+        <div class="cardFilms">
+          <p class="cardTitle">Films</p>
+          <p class="cardText">
+            Here you can find all the info about Studio Ghibli's movies.
+          </p>
+          <button class="btn" id="buttonFilms">
+            <img class="btnFilms" src="imagesGhibli/fairyDust.png" />
+            FILMS
+          </button>
+        </div>
+        <div class="cardDirectors">
+          <p class="cardTitle">Directors</p>
+          <p class="cardText">
+            All about the directors that made the films we love.
+          </p>
+          <button class="btn" id="buttonDirectors">
+            <img class="btnDirectors" src="imagesGhibli/umbrella.png" />
+            DIRECTORS
+          </button>
+        </div>
+        <div class="cardCharacters">
+          <p class="cardTitle">Characters</p>
+          <p class="cardText">Information about the characters we all love.</p>
+          <button class="btn" id="buttonCharacters">
+            <img class="btnCharacters" src="imagesGhibli/cat.png" />
+            CHARACTERS
+          </button>
+        </div>
+      </section>
+      <section class="prettyimages" id="wallImg">
+        <p class="wallTitle">Wallpapers</p>
+        <div class="wallimages">
+          <img class="gedo" src="./imagesGhibli/gedo1.jpg" />
+          <img class="chihiro" src="./imagesGhibli/chihiro020.jpg" />
+          <img class="totoro" src="./imagesGhibli/totoro.jpg" />
+          <img class="ponyo" src="./imagesGhibli/ponyo1.jpg" />
+        </div>
+      </section>
+      <section class="directors" id="movieDir" style="display: none">
+        <p id="directList">DIRECTORS</p>
+        <ul id="directorsName">
+          <li class="directorsList" id="hayao">Hayao Miyazaki</li>
 
-<body>
-  <header class="header">
-    <img class="logo" src="imagesGhibli/logo.png" alt="logo">
-    <img class="logotipo" src="imagesGhibli/logotipo.png">
-  </header>
-  <main class="main">
-    <section class="landingText" id="homeTxt">
-      <p class="title">Studio Ghibli</p>
-      <p class="welcome">What’s your Studio Ghibli favorite movie? Wich’s the character that touched your heart?
-        Everything you would like to know about Studio Ghibli is here.<br>
-        Welcome to Ghibli Love!</p>
-    </section>
-    <section class="cards" id="home">
-      <div class="cardFilms">
-        <p class="cardTitle">Films</p>
-        <p class="cardText">Here you can find all the info about Studio Ghibli's movies.</p>
-        <button class="btn" id="buttonFilms">
-          <img class="btnFilms" src="imagesGhibli/fairyDust.png">
-          FILMS
-        </button>
-      </div>
-      <div class="cardDirectors">
-        <p class="cardTitle">Directors</p>
-        <p class="cardText">All about the directors that made the films we love.</p>
-        <button class="btn" id="buttonDirectors">
-          <img class="btnDirectors" src="imagesGhibli/umbrella.png">
-          DIRECTORS
-        </button>
-      </div>
-      <div class="cardCharacters">
-        <p class="cardTitle">Characters</p>
-        <p class="cardText">Information about the characters we all love.</p>
-        <button class="btn" id="buttonCharacters">
-          <img class="btnCharacters" src="imagesGhibli/cat.png">
-          CHARACTERS
-        </button>
-      </div>
-    </section>
-    <section  class="prettyimages" id="wallImg">
-      <p class="wallTitle">Wallpapers</p>
-      <div class="wallimages">
-        <img class="gedo" src="./imagesGhibli/gedo1.jpg">
-        <img class="chihiro" src="./imagesGhibli/chihiro020.jpg">
-        <img class="totoro" src="./imagesGhibli/totoro.jpg">
-        <img class="ponyo" src="./imagesGhibli/ponyo1.jpg">
-      </div>
-    </section>
-    <section class="directors" id="movieDir" style="display: none;">
-      <p id = "directList">DIRECTORS</p>
-      <ul id="directorsName">
-      <li class="directorsList" id="hayao">Hayao Miyazaki</li>
+          <p class="directorSpan" id="hayaoFilms"></p>
+          <br />
+          <li class="directorsList" id="isao">Isao Takahata</li>
 
-        <p class="directorSpan" id="hayaoFilms"></p>
-      <br>
-      <li class="directorsList" id="isao">Isao Takahata</li>
+          <p class="directorSpan" id="isaoFilms"></p>
+          <br />
+          <li class="directorsList" id="yoshi">Yoshifumi Kondō</li>
 
-        <p class="directorSpan" id="isaoFilms"></p>
-      <br>
-      <li class="directorsList" id="yoshi">Yoshifumi Kondō</li>
+          <p class="directorSpan" id="yoshiFilms"></p>
+          <br />
+          <li class="directorsList" id="yuki">Hiroyuki Morita</li>
 
-        <p class="directorSpan" id="yoshiFilms"></p>
-      <br>
-      <li class="directorsList" id="yuki">Hiroyuki Morita</li>
+          <p class="directorSpan" id="yukiFilms"></p>
+          <br />
+          <li class="directorsList" id="goro">Gorō Miyazaki</li>
 
-        <p class="directorSpan" id="yukiFilms"></p>
-      <br>
-      <li class="directorsList" id="goro">Gorō Miyazaki</li>
+          <p class="directorSpan" id="goroFilms"></p>
+          <br />
+          <li class="directorsList" id="masa">Hiromasa Yonebayashi</li>
 
-        <p class="directorSpan" id="goroFilms"></p>
-      <br>
-      <li class="directorsList" id="masa">Hiromasa Yonebayashi</li>
-
-        <p class="directorSpan" id="masaFilms"></p>
-    </ul>
-      <button class="home" id="homeDir">HOME</button>
-    </section>
-    <section id= "filmSort" class="films" style="display: none;">
-      <p id = "sortedFilms">FILMS</p>
-      <select id="filmSelect">
-        <option value="old">Older</option>
-        <option value="recent">Recent</option>
-        <option value="az">A-Z</option>
-        <option value="za">Z-A</option>
-      </select>
-      <div id= "filmsDate" class= "dateParent"></div>
-      <button class="home" id="homeFilms">HOME</button>
-    </section>
-  </main>
-  <footer>
-    <p class="foot">Made by Dani "&" Lu</p>
-  </footer>
-  <!--<div id="root"></div>-->
-  <script src="main.js" type="module"></script>
-</body>
-
+          <p class="directorSpan" id="masaFilms"></p>
+        </ul>
+        <button class="home" id="homeDir">HOME</button>
+      </section>
+      <section id="filmSort" class="films" style="display: none">
+        <p id="sortedFilms">FILMS</p>
+        <select id="filmSelect">
+          <option value="old">Older</option>
+          <option value="recent">Recent</option>
+          <option value="az">A-Z</option>
+          <option value="za">Z-A</option>
+        </select>
+        <div id="filmsDate" class="dateParent"></div>
+        <button class="home" id="homeFilms">HOME</button>
+      </section>
+      <section id="characters" class="character" style="display: none">
+        <p id="charactersGender">CHARACTERS</p>
+        <select id= "characterSelect">
+          <option value="female">FEMALE</option>
+          <option value="male">MALE</option>
+          <option value="other">OTHER</option>
+        </select>
+        <div id="filmsCharacters"class="genderParent"></div>
+        <button class="home" id="homeCharacters">HOME</button>
+      </section>
+    </main>
+    <footer>
+      <p class="foot">Made by Dani "&" Lu</p>
+    </footer>
+    <!--<div id="root"></div>-->
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
