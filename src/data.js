@@ -1,3 +1,5 @@
+/* import {fem, male, other} from "./main"  */
+
 export let moviesList = function (dataMovie, director) {
   return dataMovie
     .filter((movies) => movies.director === director)
@@ -19,6 +21,6 @@ export let dataSortedZA = function (dataMovie) {
   return dataMovie.sort((a, b) => (b.title > a.title ? 1 : -1));
 };
 
-export let genderFilter = function(){
-    
-}
+/* export let genderPer = function(results){
+  return (fem + male + other);    
+} */

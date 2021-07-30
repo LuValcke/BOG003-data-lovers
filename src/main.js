@@ -4,6 +4,10 @@ import { dataSortedAZ, dataSortedZA, moviesList } from "./data.js";
 import { dataSortedNew } from "./data.js";
 import { dataSortedOld } from "./data.js";
 
+
+let generospersonajes = new Array();
+
+
 //Este es el evento que sucede cuando se aprieta el botón Directors
 document.getElementById("buttonDirectors").addEventListener("click", () => {
   document.getElementById("homeTxt").style.display = "none";
@@ -30,6 +34,7 @@ document.getElementById("buttonCharacters").addEventListener("click", () => {
   document.getElementById("filmSort").style.display = "none";
   document.getElementById("characters").style.display = "block";
   recorrerArray(data.films);
+  printGend(total)
 });
 //Estos son los eventos para volver al home
 document.getElementById("homeDir").addEventListener("click", () => {
@@ -109,8 +114,16 @@ function showDate(data) {
   });
 }
 
-let generospersonajes = [];
+
 //Función para crear los contenedores de los personajes, su imagen, nombre y género
+
+function recorrerArray(dataFilms) {
+  for (let i = 0; i < dataFilms.length; i++) {
+    showCharacters(dataFilms[i].people);
+  }
+  showGenders(generospersonajes);
+}
+
 function showCharacters(data) {
   data.forEach((e) => {
     const characterMovie = document.createElement("div");
@@ -125,53 +138,26 @@ function showCharacters(data) {
     characterMovie.appendChild(characterName);
     characterMovie.appendChild(characterGend);
     document.getElementById("filmsCharacters").appendChild(characterMovie);
-    //personajes = personajes + [e.gender] + ", "
     generospersonajes.push(e.gender);
   });
-
-  //showGenders(personajes)
-  //console.log(generospersonajes)
 }
 
-showGenders(generospersonajes);
-
-function recorrerArray(dataFilms) {
-  let contador = 0;
-  for (let i = 0; i < dataFilms.length; i++) {
-    showCharacters(dataFilms[i].people);
-    contador = contador + dataFilms[i].people.length;
-  } //console.log(contador)
-}
-
-/* let fem;
-let male;
-let other; */
-export function showGenders(generos) {
-let fem= 0;
-let male = 0;
-let other = 0;
-  //console.log(generos); 
-generos.forEach(element => {
+function showGenders(generos) {
+  let fem = 0;
+  let male = 0;
+  let other = 0;
+  generos.forEach(element => {
     if (element === "Female") {
         fem = fem + 1;
       } else if (element === "Male") {
         male = male + 1;
       } else {
         other = other + 1;
-      }
-      
-});
-console.log(fem)
-}
-
-
-  /* for (let i = 0; i < generos.length; i++) {
-    if (generos[i] == "Female") {
-      fem = fem + 1;
-    } else if (generos[i] == "Male") {
-      male = male + 1;
-    } else {
-      other = other + 1;
     }
-  } */
- 
+  });
+  console.log(fem, male, other)
+} 
+
+/* function printGend(){
+  document.getElementById("characterGenders").innerHTML = "There are " + (fem + male + other) + " characters in the Studio Ghibli's movies."
+} */
