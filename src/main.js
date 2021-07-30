@@ -1,6 +1,7 @@
 import data from "./data/ghibli/ghibli.js";
 
-import { dataSortedAZ, dataSortedZA, moviesList } from "./data.js";
+
+import { dataSortedAZ, dataSortedZA, moviesList, genderPer } from "./data.js";
 import { dataSortedNew } from "./data.js";
 import { dataSortedOld } from "./data.js";
 
@@ -34,7 +35,7 @@ document.getElementById("buttonCharacters").addEventListener("click", () => {
   document.getElementById("filmSort").style.display = "none";
   document.getElementById("characters").style.display = "block";
   recorrerArray(data.films);
-  printGend(total)
+  //printGend(total)
 });
 //Estos son los eventos para volver al home
 document.getElementById("homeDir").addEventListener("click", () => {
@@ -116,12 +117,14 @@ function showDate(data) {
 
 
 //Función para crear los contenedores de los personajes, su imagen, nombre y género
-
-function recorrerArray(dataFilms) {
+export let datosGeneros = {}
+export function recorrerArray(dataFilms) {
   for (let i = 0; i < dataFilms.length; i++) {
     showCharacters(dataFilms[i].people);
   }
-  showGenders(generospersonajes);
+
+  datosGeneros = showGenders(generospersonajes);
+  //console.log(datosGeneros)
 }
 
 function showCharacters(data) {
@@ -155,9 +158,14 @@ function showGenders(generos) {
         other = other + 1;
     }
   });
-  console.log(fem, male, other)
+  printGend(fem, male, other)
+
 } 
 
-/* function printGend(){
-  document.getElementById("characterGenders").innerHTML = "There are " + (fem + male + other) + " characters in the Studio Ghibli's movies."
-} */
+function printGend(fem, male, other){
+
+  const {total, femenino, masculino, otros} = genderPer({fem, male, other}) //desestructurar
+  //const totales = genderPer({fem, male, other})  en este caso se usa totales. total totales. femenino, etc
+  document.getElementById("characterGenders").innerHTML = "There are " + (total) + " characters in the Studio Ghibli's movies."
+  console.log("fem", femenino, "male", masculino, otros);
+}
