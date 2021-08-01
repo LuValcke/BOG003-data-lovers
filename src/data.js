@@ -6,6 +6,8 @@ export let moviesList = function (dataMovie, director) {
     .filter((movies) => movies.director === director)
     .map((film) => film.title);
 };
+ 
+ 
 
 export let dataSortedOld = function (dataMovie) {
   return dataMovie.sort((a, b) => (a.release_date > b.release_date ? 1 : -1));

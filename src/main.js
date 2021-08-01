@@ -86,6 +86,17 @@ document.querySelector("#filmSelect").addEventListener("change", function () {
   }
 });
 
+document.querySelector("#characterSelect").addEventListener("change", function () { 
+  const {total, femenino, masculino, otros} = genderPer({fem, male, other})
+  if (this.value == "female") {
+    document.getElementById("characterGenders").innerHTML = "There are "+(total) + " characters in Studio Ghibli's movies. "  + (femenino) + "% are female characters."
+  } else if (this.value == "male") {
+    document.getElementById("characterGenders").innerHTML = "There are "+(total) + " characters in Studio Ghibli's movies. "  + (masculino) + "% are male characters."
+  } else  {
+    document.getElementById("characterGenders").innerHTML = "There are "+(total) + " characters in Studio Ghibli's movies. "  + (otros) + "% are other or unknown genders characters."
+  } 
+});
+
 //Función para convertir en lista el string de los nombres de directores
 function addLi(director, site) {
   document.querySelector(site).innerHTML = "";
@@ -144,11 +155,11 @@ function showCharacters(data) {
     generospersonajes.push(e.gender);
   });
 }
-
+let fem = 0;
+let male = 0;
+let other = 0;
 function showGenders(generos) {
-  let fem = 0;
-  let male = 0;
-  let other = 0;
+  
   generos.forEach(element => {
     if (element === "Female") {
         fem = fem + 1;
@@ -158,14 +169,16 @@ function showGenders(generos) {
         other = other + 1;
     }
   });
-  printGend(fem, male, other)
+  //printGend(fem, male, other)
 
 } 
-
-function printGend(fem, male, other){
-
-  const {total, femenino, masculino, otros} = genderPer({fem, male, other}) //desestructurar
+ //desestructurar
   //const totales = genderPer({fem, male, other})  en este caso se usa totales. total totales. femenino, etc
+/* function printGend(fem, male, other){
+
+  
+  if 
   document.getElementById("characterGenders").innerHTML = "There are " + (total) + " characters in the Studio Ghibli's movies."
   console.log("fem", femenino, "male", masculino, otros);
 }
+ */
