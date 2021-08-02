@@ -4,8 +4,8 @@
 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Historias de usuario](#3-Historias de usuario)
-* [4. Test de usabilidad](#4-Test de usabilidad)
+* [3. Historias de usuario](#3-historias-de-usuario)
+* [4. Test de usabilidad](#4-test-de-usabilidad)
 
 
 ***
@@ -33,7 +33,7 @@ La aplicación se realizó pensando en el fanático de estas películas y se inc
 aspectos gráficos e íconos muy propios de las producciones de Studio Ghibli; inicialmente
 se desarrollo prototipo de baja fidelidad en Balsamiq, para ser posteriormente desarrollado 
 a profundidad en Figma.
-
+<img src="https://github.com/LuValcke/BOG003-data-lovers/blob/main/src/imagesGhibli/DataLoversLanding.png"></img>
 Link a Figma: https://www.figma.com/file/ecSL78vucT3TyITyxXaja0/DataLovers?node-id=0%3A1
 
 ## 3. Historias de usuario
