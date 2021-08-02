@@ -1,5 +1,3 @@
-//import recorrerArray from "./main"
-//import { datosGeneros } from "./main";
 
 export let moviesList = function (dataMovie, director) {
   return dataMovie
@@ -25,17 +23,16 @@ export let dataSortedZA = function (dataMovie) {
 };
 
 
-export let genderPer = function ({ fem, male, other }) {
+export let genderPer = function (fem, male, other) {
   let total = fem + male + other;
   let femenino = (fem * 100) / total;
   let masculino = (male * 100) / total;
   let otros = (other * 100) / total;
-
-  return {total, femenino, masculino, otros}
+  let values = {
+    fem: femenino,
+    male: masculino,
+    other: otros,
+    total: total
+  }
+  return values
 };
-//console.log(datosGeneros)
-/* let objeto = {"a" : "5", "b": "6"}
-objeto.a // número 5
-objeto.b // número 6
-let a = objeto.a
-let {b, a} = objeto */

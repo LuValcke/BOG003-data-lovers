@@ -239,6 +239,10 @@ select {
   padding-top: 5%;
   text-shadow: 1px 1px 2px #393939;
 }
+#characterGenders{
+  font-size: 12pt;
+  margin-bottom: 1%;
+}
 
 .character {
     margin: 5%;

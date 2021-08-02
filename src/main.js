@@ -86,14 +86,15 @@ document.querySelector("#filmSelect").addEventListener("change", function () {
   }
 });
 
-document.querySelector("#characterSelect").addEventListener("change", function () { 
-  const {total, femenino, masculino, otros} = genderPer({fem, male, other})
+document.querySelector("#characterSelect").addEventListener("change", function () {
+  const objectValue = genderPer(fem, male, other);
+  console.log(genderPer({fem, male, other})) 
   if (this.value == "female") {
-    document.getElementById("characterGenders").innerHTML = "There are "+(total) + " characters in Studio Ghibli's movies. "  + (femenino) + "% are female characters."
+    document.getElementById("characterGenders").innerHTML = "There are "+(objectValue.total) + " characters in Studio Ghibli's movies. Around "  + Math.round(objectValue.fem) + "% of them are female characters."
   } else if (this.value == "male") {
-    document.getElementById("characterGenders").innerHTML = "There are "+(total) + " characters in Studio Ghibli's movies. "  + (masculino) + "% are male characters."
+    document.getElementById("characterGenders").innerHTML = "There are "+(objectValue.total) + " characters in Studio Ghibli's movies. Around "  + Math.round(objectValue.male) + "% of them are male characters."
   } else  {
-    document.getElementById("characterGenders").innerHTML = "There are "+(total) + " characters in Studio Ghibli's movies. "  + (otros) + "% are other or unknown genders characters."
+    document.getElementById("characterGenders").innerHTML = "There are "+(objectValue.total) + " characters in Studio Ghibli's movies. Around "  + Math.round(objectValue.other) + "% of them are other or unknown genders characters."
   } 
 });
 
@@ -169,6 +170,7 @@ function showGenders(generos) {
         other = other + 1;
     }
   });
+  console.log(fem, male, other)
   //printGend(fem, male, other)
 
 } 
