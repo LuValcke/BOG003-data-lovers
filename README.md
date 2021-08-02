@@ -4,8 +4,8 @@
 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Historias de usuario](#3-Historias de usuario)
-* [4. Test de usabilidad](#4-Test de usabilidad)
+* [3. Historias de usuario](#3-historias-de-usuario)
+* [4. Test de usabilidad](#4-test-de-usabilidad)
 
 
 ***
