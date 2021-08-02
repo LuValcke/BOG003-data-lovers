@@ -134,8 +134,6 @@ describe("dataSortedZA", () => {
   });
 });
 
-//const entry3 = (82, 88, 3);
-
 describe("genderPer", () => {
   it("is a function", () => {
     expect(typeof genderPer).toBe("function");

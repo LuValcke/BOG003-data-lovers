@@ -1,4 +1,4 @@
-
+// Función que realiza el filtro de las películas por su director.
 export let moviesList = function (dataMovie, director) {
   return dataMovie
     .filter((movies) => movies.director === director)
@@ -6,7 +6,7 @@ export let moviesList = function (dataMovie, director) {
 };
  
  
-
+//Estas funciones ordenan las películas según su fecha y nombre de forma ascendente y descendente.
 export let dataSortedOld = function (dataMovie) {
   return dataMovie.sort((a, b) => (a.release_date > b.release_date ? 1 : -1));
 };
@@ -22,7 +22,7 @@ export let dataSortedZA = function (dataMovie) {
   return dataMovie.sort((a, b) => (b.title > a.title ? 1 : -1));
 };
 
-
+//Esta función realiza el cálculo de porcentajes de los géneros de los personajes.
 export let genderPer = function (fem, male, other) {
   let total = fem + male + other;
   let femenino = (fem * 100) / total;
