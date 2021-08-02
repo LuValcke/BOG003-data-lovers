@@ -5,9 +5,8 @@ import { dataSortedAZ, dataSortedZA, moviesList, genderPer } from "./data.js";
 import { dataSortedNew } from "./data.js";
 import { dataSortedOld } from "./data.js";
 
-
+//Esta variable guarda el listado de los generos de los personajes se llena por push desde la linea 151
 let generospersonajes = new Array();
-
 
 //Este es el evento que sucede cuando se aprieta el botón Directors
 document.getElementById("buttonDirectors").addEventListener("click", () => {
@@ -17,7 +16,7 @@ document.getElementById("buttonDirectors").addEventListener("click", () => {
   document.getElementById("movieDir").style.display = "block";
 });
 
-//Este es el evento que sucede cuando se aprieta el botón Films
+//Este es el evento que sucede cuando se aprieta el botón Films, la función showDate se crea en la linea 112
 document.getElementById("buttonFilms").addEventListener("click", () => {
   document.getElementById("homeTxt").style.display = "none";
   document.getElementById("home").style.display = "none";
@@ -26,7 +25,8 @@ document.getElementById("buttonFilms").addEventListener("click", () => {
   document.getElementById("filmSort").style.display = "block";
   showDate(data.films);
 });
-//Este es el evento que sucede cuando se aprieta el botón Characters
+
+//Este es el evento que sucede cuando se aprieta el botón Characters, la función recorrerArray se crea en la linea 131
 document.getElementById("buttonCharacters").addEventListener("click", () => {
   document.getElementById("homeTxt").style.display = "none";
   document.getElementById("home").style.display = "none";
@@ -35,9 +35,9 @@ document.getElementById("buttonCharacters").addEventListener("click", () => {
   document.getElementById("filmSort").style.display = "none";
   document.getElementById("characters").style.display = "block";
   recorrerArray(data.films);
-  //printGend(total)
 });
-//Estos son los eventos para volver al home
+
+//Estos son los eventos para volver al home de las 3 páginas
 document.getElementById("homeDir").addEventListener("click", () => {
   location.reload();
 });
@@ -47,6 +47,7 @@ document.getElementById("homeFilms").addEventListener("click", () => {
 document.getElementById("homeCharacters").addEventListener("click", () => {
   location.reload();
 });
+
 //Estas funciones suceden cuando se clickea el nombre de algún director en la página de directores, al darle click se muestran las películas de ese director, al volver a clickear se ocultan
 document.getElementById("hayao").addEventListener("click", () => {
   addLi("Hayao Miyazaki", "#hayaoFilms");
@@ -85,15 +86,15 @@ document.querySelector("#filmSelect").addEventListener("change", function () {
     showDate(dataSortedZA(data.films));
   }
 });
-
-document.querySelector("#characterSelect").addEventListener("change", function () { 
-  const {total, femenino, masculino, otros} = genderPer({fem, male, other})
+//Esta función imprime el cálculo de porcentajes de géneros que realiza la función genderPer de data.js
+document.querySelector("#characterSelect").addEventListener("change", function () {
+  const objectValue = genderPer(fem, male, other);
   if (this.value == "female") {
-    document.getElementById("characterGenders").innerHTML = "There are "+(total) + " characters in Studio Ghibli's movies. "  + (femenino) + "% are female characters."
+    document.getElementById("characterGenders").innerHTML = "There are "+(objectValue.total) + " characters in Studio Ghibli's movies. Around "  + Math.round(objectValue.fem) + "% of them are female characters."
   } else if (this.value == "male") {
-    document.getElementById("characterGenders").innerHTML = "There are "+(total) + " characters in Studio Ghibli's movies. "  + (masculino) + "% are male characters."
+    document.getElementById("characterGenders").innerHTML = "There are "+(objectValue.total) + " characters in Studio Ghibli's movies. Around "  + Math.round(objectValue.male) + "% of them are male characters."
   } else  {
-    document.getElementById("characterGenders").innerHTML = "There are "+(total) + " characters in Studio Ghibli's movies. "  + (otros) + "% are other or unknown genders characters."
+    document.getElementById("characterGenders").innerHTML = "There are "+(objectValue.total) + " characters in Studio Ghibli's movies. Around "  + Math.round(objectValue.other) + "% of them are other or unknown genders characters."
   } 
 });
 
@@ -126,18 +127,14 @@ function showDate(data) {
   });
 }
 
-
-//Función para crear los contenedores de los personajes, su imagen, nombre y género
-export let datosGeneros = {}
-export function recorrerArray(dataFilms) {
+//Esta función permite recorrer el arreglo de data y acceder a sus personajes y de ellos tomar imágen, nombre y género para poder realizar la función showCharacters (138)
+function recorrerArray(dataFilms) {
   for (let i = 0; i < dataFilms.length; i++) {
     showCharacters(dataFilms[i].people);
   }
-
-  datosGeneros = showGenders(generospersonajes);
-  //console.log(datosGeneros)
+  showGenders(generospersonajes);
 }
-
+//Función para crear los contenedores de los personajes, su imagen, nombre y género se llama en la linea 133
 function showCharacters(data) {
   data.forEach((e) => {
     const characterMovie = document.createElement("div");
@@ -155,11 +152,11 @@ function showCharacters(data) {
     generospersonajes.push(e.gender);
   });
 }
+//Esta función realiza el conteo de cada género utilizando el array inicializado en la linea 9
 let fem = 0;
 let male = 0;
 let other = 0;
 function showGenders(generos) {
-  
   generos.forEach(element => {
     if (element === "Female") {
         fem = fem + 1;
@@ -169,16 +166,4 @@ function showGenders(generos) {
         other = other + 1;
     }
   });
-  //printGend(fem, male, other)
-
 } 
- //desestructurar
-  //const totales = genderPer({fem, male, other})  en este caso se usa totales. total totales. femenino, etc
-/* function printGend(fem, male, other){
-
-  
-  if 
-  document.getElementById("characterGenders").innerHTML = "There are " + (total) + " characters in the Studio Ghibli's movies."
-  console.log("fem", femenino, "male", masculino, otros);
-}
- */

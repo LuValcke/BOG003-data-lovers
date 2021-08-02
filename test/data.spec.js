@@ -4,6 +4,7 @@ import {
   dataSortedNew,
   dataSortedAZ,
   dataSortedZA,
+  genderPer,
 } from "../src/data.js";
 const entry = [
   {
@@ -128,7 +129,17 @@ describe("dataSortedZA", () => {
     { title: "My Neighbors the Yamadas", release_date: "1999" },
     { title: "Howl's Moving Castle", release_date: "2004" },
   ];
-  it("returns output1", () => {
+  it("returns output2", () => {
     expect(dataSortedZA(entry2, entry2.title)).toStrictEqual(output2);
+  });
+});
+
+describe("genderPer", () => {
+  it("is a function", () => {
+    expect(typeof genderPer).toBe("function");
+  });
+  const output2 = {total: 173, fem: 47.39884393063584, male: 50.86705202312139, other: 1.7341040462427746};
+  it("returns output2", () => {
+    expect(genderPer(82, 88, 3)).toStrictEqual(output2);
   });
 });
