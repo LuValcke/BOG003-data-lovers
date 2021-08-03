@@ -25,13 +25,13 @@ export let dataSortedZA = function (dataMovie) {
 //Esta función realiza el cálculo de porcentajes de los géneros de los personajes.
 export let genderPer = function (fem, male, other) {
   let total = fem + male + other;
-  let femenino = (fem * 100) / total;
-  let masculino = (male * 100) / total;
-  let otros = (other * 100) / total;
+  let females = (fem * 100) / total;
+  let males = (male * 100) / total;
+  let others = (other * 100) / total;
   let values = {
-    fem: femenino,
-    male: masculino,
-    other: otros,
+    fem: females,
+    male: males,
+    other: others,
     total: total
   }
   return values

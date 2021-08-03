@@ -1,12 +1,10 @@
 import data from "./data/ghibli/ghibli.js";
 
 
-import { dataSortedAZ, dataSortedZA, moviesList, genderPer } from "./data.js";
-import { dataSortedNew } from "./data.js";
-import { dataSortedOld } from "./data.js";
+import {dataSortedAZ, dataSortedZA, moviesList, genderPer, dataSortedNew, dataSortedOld} from "./data.js";
 
-//Esta variable guarda el listado de los generos de los personajes se llena por push desde la linea 151
-let generospersonajes = new Array();
+//Esta variable guarda el listado de los generos de los personajes se llena por push desde la linea 150
+let genderCharacters = new Array();
 
 //Este es el evento que sucede cuando se aprieta el botón Directors
 document.getElementById("buttonDirectors").addEventListener("click", () => {
@@ -16,7 +14,7 @@ document.getElementById("buttonDirectors").addEventListener("click", () => {
   document.getElementById("movieDir").style.display = "block";
 });
 
-//Este es el evento que sucede cuando se aprieta el botón Films, la función showDate se crea en la linea 112
+//Este es el evento que sucede cuando se aprieta el botón Films, la función showDate se crea en la linea 111
 document.getElementById("buttonFilms").addEventListener("click", () => {
   document.getElementById("homeTxt").style.display = "none";
   document.getElementById("home").style.display = "none";
@@ -26,7 +24,7 @@ document.getElementById("buttonFilms").addEventListener("click", () => {
   showDate(data.films);
 });
 
-//Este es el evento que sucede cuando se aprieta el botón Characters, la función recorrerArray se crea en la linea 131
+//Este es el evento que sucede cuando se aprieta el botón Characters, la función recorrerArray se crea en la linea 129
 document.getElementById("buttonCharacters").addEventListener("click", () => {
   document.getElementById("homeTxt").style.display = "none";
   document.getElementById("home").style.display = "none";
@@ -34,7 +32,7 @@ document.getElementById("buttonCharacters").addEventListener("click", () => {
   document.getElementById("movieDir").style.display = "none";
   document.getElementById("filmSort").style.display = "none";
   document.getElementById("characters").style.display = "block";
-  recorrerArray(data.films);
+  loopArray(data.films);
 });
 
 //Estos son los eventos para volver al home de las 3 páginas
@@ -128,11 +126,11 @@ function showDate(data) {
 }
 
 //Esta función permite recorrer el arreglo de data y acceder a sus personajes y de ellos tomar imágen, nombre y género para poder realizar la función showCharacters (138)
-function recorrerArray(dataFilms) {
+function loopArray(dataFilms) {
   for (let i = 0; i < dataFilms.length; i++) {
     showCharacters(dataFilms[i].people);
   }
-  showGenders(generospersonajes);
+  showGenders(genderCharacters);
 }
 //Función para crear los contenedores de los personajes, su imagen, nombre y género se llama en la linea 133
 function showCharacters(data) {
@@ -149,7 +147,7 @@ function showCharacters(data) {
     characterMovie.appendChild(characterName);
     characterMovie.appendChild(characterGend);
     document.getElementById("filmsCharacters").appendChild(characterMovie);
-    generospersonajes.push(e.gender);
+    genderCharacters.push(e.gender);
   });
 }
 //Esta función realiza el conteo de cada género utilizando el array inicializado en la linea 9
