@@ -2,6 +2,8 @@
 
 ## Proyecto realizado por Daniela Funes y Luisa Valcke
 
+### Enlace: https://danif70.github.io/BOG003-data-lovers/src/index.html
+
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
