@@ -1,5 +1,7 @@
 # Data Lovers
 
+## Proyecto realizado por Daniela Funes y Luisa Valcke
+
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
